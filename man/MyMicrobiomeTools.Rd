@@ -4,7 +4,7 @@
 \alias{MyMicrobiomeTools}
 \title{"A tool to search for a specific taxa's prevalence and mean relative abundance from your phyloseq object"}
 \usage{
-calculate_abundance_prevalence <- function(physeq, taxon_id, category)
+calculate_abundance_prevalence(physeq, taxon_id, category)
 }
 \description{
 calculates the mean relative abundance and prevalence from a phyloseq object

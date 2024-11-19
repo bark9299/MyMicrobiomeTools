@@ -1,27 +1,36 @@
-#' calculate_abundance_prevalence
-#' @name MyMicrobiomeTools
+#' Calculate Abundance Prevalence
 #'
-#' @title "A tool to search for a specific taxa's prevalence and mean relative abundance from your phyloseq object"
+#' @title A tool to search for a specific taxa's prevalence and mean relative abundance from your phyloseq object
+#'
+#' @description
+#' Calculates the mean relative abundance and prevalence from a phyloseq object.
+#' You input the hash id of the taxa of interest, your phyloseq object, and the category you want to look at.
+#' This function automatically calculates relative abundances, so the input phyloseq object needs to be raw counts.
+#' You can filter your phyloseq object beforehand to just have one site of interest.
+#'
+#' @param physeq Your phyloseq object.
+#' @param taxon_id The hash id of interest from your taxa table.
+#' @param category The taxonomic level of interest (e.g., genus or species).
+#'
+#' @return A data frame with mean relative abundance and prevalence by category.
+#'
+#' @usage calculate_abundance_prevalence(physeq, taxon_id, category)
+#'
+#' @examples
+#' \dontrun{
+#'   # Assuming 'physeq' is a phyloseq object loaded in your environment
+#'   calculate_abundance_prevalence(physeq, taxon_id, category)
+#' }
+#'
+#' @import phyloseq
+#' @import microbiome
+#' @import dplyr
+#' @import devtools
+#' @import stats
 #'
 #' @author Elyse Barker
 #'
-#' @description
-#' calculates the mean relative abundance and prevalence from a phyloseq object
-#' You input the hash id of the taxa of interest, your phyloseq object, and what category you want to look at
-#' this function automatically calculates to relative abundances so input phyloseq object needs to be raw counts
-#' need to have one column in the metadata be only one body site/environment of interest
-#'
-#' @usage calculate_abundance_prevalence(physeq, taxon_id, category)
-#' @examples
-#' # example code
-#' #"body.site" column of the metadata only has the body site "gill". You can filter your phyloseq object beforehand to just have one site of interest.
-#' result <- calculate_abundance_prevalence(gill_not_rel, "8d9fa267695027600ad8cf2eaca55c9c", "body.site")
-
-# Load necessary libraries
-library(phyloseq)
-library(microbiome)
-#this function automatically calculates to relative abundances so input phyloseq object needs to be raw counts
-#need to have one column in the metadata be only one body site/environment of interest
+#' @name calculate_abundance_prevalence
 
 calculate_abundance_prevalence <- function(physeq, taxon_id, category) {
   # Check if the taxon exists in the phyloseq object

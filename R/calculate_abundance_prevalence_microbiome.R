@@ -10,7 +10,7 @@
 #'
 #' @param physeq Your phyloseq object.
 #' @param taxon_id The hash id of interest from your taxa table.
-#' @param category The taxonomic level of interest (e.g., genus or species).
+#' @param category The column name of your metadata (sam_data) of interest. (For example, mine would be "body.site"). This needs to be one variable (ie one body site)
 #'
 #' @return A data frame with mean relative abundance and prevalence by category.
 #'

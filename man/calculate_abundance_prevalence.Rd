@@ -11,7 +11,7 @@ calculate_abundance_prevalence(physeq, taxon_id, category)
 
 \item{taxon_id}{The hash id of interest from your taxa table.}
 
-\item{category}{The taxonomic level of interest (e.g., genus or species).}
+\item{category}{The column name of your metadata (sam_data) of interest. (For example, mine would be "body.site"). This needs to be one variable (ie one body site)}
 }
 \value{
 A data frame with mean relative abundance and prevalence by category.

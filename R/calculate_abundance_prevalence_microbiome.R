@@ -31,7 +31,7 @@
 #' @author Elyse Barker
 #'
 #' @name calculate_abundance_prevalence
-
+#' @export
 calculate_abundance_prevalence <- function(physeq, taxon_id, category) {
   # Check if the taxon exists in the phyloseq object
   if (!(taxon_id %in% taxa_names(physeq))) {

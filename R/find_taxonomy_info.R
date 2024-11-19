@@ -27,7 +27,7 @@
 #' }
 #'
 #' @name find_taxonomy_info
-
+#' @export
 find_taxonomy_info <- function(physeq, tax_level, tax_name) {
   # Check if physeq is a valid phyloseq object
   if (!inherits(physeq, "phyloseq")) {

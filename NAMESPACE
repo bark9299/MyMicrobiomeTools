@@ -3,6 +3,7 @@
 export(calculate_abundance_prevalence)
 export(calculate_top_prevalence)
 export(find_taxonomy_info)
+export(find_unique_taxa)
 import(devtools)
 import(dplyr)
 import(microbiome)

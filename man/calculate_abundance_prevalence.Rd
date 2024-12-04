@@ -2,36 +2,34 @@
 % Please edit documentation in R/calculate_abundance_prevalence_microbiome.R
 \name{calculate_abundance_prevalence}
 \alias{calculate_abundance_prevalence}
-\title{A tool to search for a specific taxa's prevalence and mean relative abundance from your phyloseq object}
+\title{A tool to search for a specific taxon's prevalence and mean relative abundance from your phyloseq object}
 \usage{
-calculate_abundance_prevalence(physeq, taxon_id, category)
+calculate_abundance_prevalence(physeq, taxon_id, category, convert_to_relative = TRUE)
 }
 \arguments{
 \item{physeq}{Your phyloseq object.}
 
-\item{taxon_id}{The hash id of interest from your taxa table.}
+\item{taxon_id}{The hash ID of interest from your taxa table.}
 
-\item{category}{The column name of your metadata (sam_data) of interest. (For example, mine would be "body.site"). This needs to be one variable (ie one body site)}
+\item{category}{The column name of your metadata (sample_data) of interest (e.g., "body.site").}
+
+\item{convert_to_relative}{Logical; whether to convert the data to relative abundance. Default is TRUE.}
 }
 \value{
 A data frame with mean relative abundance and prevalence by category.
 }
 \description{
-Calculates the mean relative abundance and prevalence from a phyloseq object.
-You input the hash id of the taxa of interest, your phyloseq object, and the category you want to look at.
-This function automatically calculates relative abundances, so the input phyloseq object needs to be raw counts.
-You can filter your phyloseq object beforehand to just have one site of interest.
+Calculates the mean relative abundance and prevalence of a specific taxon across all levels of a specified category in your phyloseq object.
+You input the hash ID of the taxon of interest, your phyloseq object, and the category you want to look at.
+This function offers an option to automatically calculate relative abundances if the input phyloseq object contains raw counts.
 }
 \details{
-Calculate Abundance Prevalence
+Calculate Abundance and Prevalence by Metadata Category
 }
 \examples{
 \dontrun{
   # Assuming 'physeq' is a phyloseq object loaded in your environment
-  calculate_abundance_prevalence(physeq, taxon_id, category)
+  calculate_abundance_prevalence(physeq, taxon_id, category, convert_to_relative = TRUE)
 }
 
-}
-\author{
-Elyse Barker
 }

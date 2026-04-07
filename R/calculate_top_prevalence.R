@@ -9,7 +9,7 @@
 #'
 #' @usage calculate_top_prevalence(physeq, n = 20, group_var = NULL)
 #'
-#' @param physeq A phyloseq object.
+#' @param physeq A phyloseq object. (raw counts as this converts it to rel abundances)
 #' @param n The number of top taxa to show (sorted by prevalence).
 #' @param group_var The metadata column name to group by (e.g., "body.site").
 #' @return A data frame with columns for group, taxon, taxonomic ranks, mean relative abundance, and prevalence.
